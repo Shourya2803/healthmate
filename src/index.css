@@ -1,0 +1,11 @@
+@import "tailwindcss";
+body {
+  background-color: white !important; /* Force white background */
+}
+
+/* Disable dark mode if using Tailwind */
+.dark {
+  background-color: white !important;
+  color: inherit !important;
+}
+
