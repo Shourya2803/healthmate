@@ -20,9 +20,10 @@ function App() {
       <Title />
       <div className="relative z-10 overflow-x-hidden">
       <Symtoms/>
-        <Cards />
+       
         <Card2 />
         <Xray/>
+        <Cards />
         
        
         </div>
