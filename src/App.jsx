@@ -19,10 +19,11 @@ function App() {
 
       <Title />
       <div className="relative z-10 overflow-x-hidden">
+      <Symtoms/>
         <Cards />
         <Card2 />
         <Xray/>
-        <Symtoms/>
+        
        
         </div>
       <Rainbow  /> {/* Rainbow circles on the right */}
