@@ -57,31 +57,25 @@ const Card2 = () => {
             ref={ref}
             style={{
                 transform: `translateY(${y}px) scale(${scale})`,
-                overflow: 'hidden',
-                position: 'relative'
+                overflow: 'hidden', // Ensure no extra scrollbars are created
+                position: 'relative',
             }}
-            className="flex flex-col md:flex-row items-center justify-start min-h-[60vh] bg-black px-6 pt-20 md:pt-32"
+            className="flex flex-col md:flex-row items-center justify-start min-h-screen bg-black px-6 pt-20 md:pt-32"
         >
             {/* Image Card */}
             <div className="flex flex-row space-x-4">
-                {/* Only one image container */}
                 <div
                     className="relative w-40 h-56 cursor-pointer mb-8 md:mb-0 md:mr-10"
                     onClick={() => handleImageClick(imageUrls[currentIndex].link)}
-
                 >
-                    {/* Spinning gradient ring */}
                     <div className="absolute -inset-3 z-0 rounded-full animate-spin-slow pointer-events-none">
                         <div className="w-full h-full rounded-full bg-[conic-gradient(from_0deg,_red,_transparent_70%)] blur-sm opacity-80"></div>
                     </div>
-
-                    {/* Image container */}
                     <div className="relative w-full h-full overflow-hidden rounded-xl z-10 border-4 border-red-400 shadow-[0_0_20px_rgba(255,255,0,0.6)]">
                         <img
                             src={imageUrls[currentIndex].url}
                             alt={`card-${currentIndex}`}
                             className="absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100 z-10"
-
                         />
                     </div>
                 </div>

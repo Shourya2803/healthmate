@@ -57,31 +57,25 @@ const xray = () => {
              ref={ref}
              style={{
                  transform: `translateY(${y}px) scale(${scale})`,
-                 overflow: 'hidden',
-                 position: 'relative'
+                 overflow: 'hidden', // Prevent extra scrollbars
+                 position: 'relative',
              }}
-             className="flex flex-col md:flex-row items-center justify-start min-h-[60vh] bg-black px-6 pt-20 md:pt-32"
+             className="flex flex-col md:flex-row items-center justify-start min-h-screen bg-black px-6 pt-20 md:pt-32"
          >
              {/* Image Card */}
              <div className="flex flex-row space-x-4">
-                 {/* Only one image container */}
                  <div
                      className="relative w-40 h-56 cursor-pointer mb-8 md:mb-0 md:mr-10"
                      onClick={() => handleImageClick(imageUrls[currentIndex].link)}
- 
                  >
-                     {/* Spinning gradient ring */}
                      <div className="absolute -inset-3 z-0 rounded-full animate-spin-slow pointer-events-none">
                          <div className="w-full h-full rounded-full bg-[conic-gradient(from_0deg,_green,_transparent_70%)] blur-sm opacity-80"></div>
                      </div>
- 
-                     {/* Image container */}
                      <div className="relative w-full h-full overflow-hidden rounded-xl z-10 border-4 border-green-400 shadow-[0_0_20px_rgba(255,255,0,0.6)]">
                          <img
                              src={imageUrls[currentIndex].url}
                              alt={`card-${currentIndex}`}
                              className="absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100 z-10"
- 
                          />
                      </div>
                  </div>
@@ -99,7 +93,7 @@ const xray = () => {
                      whileHover={{ scale: 1.1 }}
                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                  >
-                     {splitWords("RayVision ")}
+                     {splitWords("RayVision")}
                  </motion.h2>
  
                  <motion.p
@@ -107,7 +101,7 @@ const xray = () => {
                      whileHover={{ opacity: 1, scale: 1.05 }}
                  >
                      {splitWords(
-                         "Detect hidden anomalies in X-rays with AI-powered analysis. Instantly identify fractures, infections, or irregularities, helping radiologists make faster, more accurate diagnoses with confidence"
+                         "Detect hidden anomalies in X-rays with AI-powered analysis. Instantly identify fractures, infections, or irregularities, helping radiologists make faster, more accurate diagnoses with confidence."
                      )}
                  </motion.p>
              </motion.div>
@@ -115,4 +109,4 @@ const xray = () => {
      );
  };
 
-export default xray
+export default xray;

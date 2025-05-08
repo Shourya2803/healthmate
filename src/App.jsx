@@ -18,11 +18,15 @@ function App() {
       <Cursor /> 
 
       <Title />
-      <div className="relative z-10 overflow-x-hidden">
-      <Symtoms/>
+       <div>
+       <div className="relative z-10 overflow-x-hidden">
+       <Symtoms/>
        
-        <Card2 />
-        <Xray/>
+       <Card2 />
+       <Xray/>
+      </div>
+     
+     
         <Cards />
         
        
